@@ -140,7 +140,7 @@ $data = mysqli_fetch_array($query);
                             include '../User-asset/include/koneksi.php';
                             
 
-                              $itemCount = mysqli_num_rows(mysqli_query($con, "SELECT * FROM `pengaduan` WHERE  status='".$_SESSION['nik']."'"));
+                              $itemCount = mysqli_num_rows(mysqli_query($con, 'SELECT * FROM `pengaduan` WHERE nik='.$_SESSION['nik'].' AND status="selesai"'));
                               echo''.$itemCount.' <i class="fa fa-check" style="color:green; font-size:small;"></i>';
                               
                 ?>

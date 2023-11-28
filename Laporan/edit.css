@@ -33,8 +33,10 @@ input,
 input[type="date"],
 textarea {
     background: transparent;
-    border: 1px solid #ccc;
-    padding: 2px 1px;
+    border: 1px solid #eae4e4;
+    padding: 1.5rem 1.3rem;
+    resize: none !important;
+    border-radius: .5rem;
 }
 
 label {
@@ -91,7 +93,9 @@ input,
 textarea[disabled] {
     color: #000;
     border-color: transparent;
+    resize: none !important;
 }
+
 
 .readOnly .actionButtons {
     display: none;

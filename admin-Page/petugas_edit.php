@@ -119,7 +119,7 @@ if (isset($_POST['ubah'])) {
     $id_petugas = $_POST['id_petugas'];
     $nama_petugas = $_POST['nama_petugas'];
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
     $telp = $_POST['telp'];
     $level = $_POST['level'];
 
