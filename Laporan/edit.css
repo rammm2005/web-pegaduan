@@ -1,0 +1,112 @@
+body {
+    font: 14px Arial, Helvetica, sans-serif;
+}
+
+.formSection {
+    padding: 10px;
+    margin-bottom: 10px;
+    /* border: 2px solid #ccc; */
+    background: #e5f6ea;
+    box-shadow: 1px 4px 6px #ccc , 0px 0px 10px #9c9696;
+    transition: background 0.4s ease;
+}
+
+.formSection * {
+    transition: opacity 0.4s ease;
+}
+
+label,
+input,
+input[type="date"],
+button {
+    display: block;
+    margin: 5px;
+}
+input[type="date"]{
+    width: 50%;
+    padding: 1em;
+}
+input,
+input[type="date"],
+textarea {
+    background: transparent;
+    border: 1px solid #ccc;
+    padding: 2px 1px;
+}
+
+label {
+    padding-left: 2px;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.actionButtons {
+    margin: 5px 5px 0;
+}
+
+.cancelButton {
+    margin-right: 10px;
+    color: #666;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.saveButton {
+    display: inline-block;
+    padding: 8px 16px;
+    background: hwb(186 26% 15%);
+    color: #fff;
+    font-size: 1.2em;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: background 0.4s ease;
+}
+
+.saveButton:hover,
+.editButton:hover {
+    background: hsl(223, 72%, 47%);
+}
+
+.editButton {
+    display: none;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background: #9db0a3;
+    color: #fff;
+    border: 2px solid #fff;
+    transition: background 0.4s ease;
+}
+
+
+.formSection.readOnly {
+    background: #e5f6ea;
+}
+
+input,
+textarea[disabled] {
+    color: #000;
+    border-color: transparent;
+}
+
+.readOnly .actionButtons {
+    display: none;
+}
+
+.readOnly .editButton {
+    display: block;
+    cursor: pointer;
+}
+
+.formSection.disabled * {
+    opacity: .5;
+}
+
+.disabled .editButton {
+    display: block;
+    cursor: default;
+}
+
+.disabled .editButton:hover {
+    background: #9db0a3;
+}

@@ -1,0 +1,141 @@
+
+label{
+    margin: 10px 0px;
+    font-weight: bold;
+    font-size: 12px;
+  }
+  i {
+    text-align: center;
+    display: inline-block;
+    line-height: 35px;
+  }
+  .d-none{
+    display: none;
+  }
+  .form-group{
+    position: relative;
+    right: 0;
+    bottom: 0;
+    width: 250px;
+  }
+  .file-upload {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 32px;
+
+  }
+  .btn-upload {
+    margin-top: 10px;
+    width: 100%;
+    height: 35px;
+    color: #6c7293;
+    background: #fff;
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    border: 1px solid #799fc0;
+    border-radius: 3px 3px 3px 10px;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    /* margin-top: -3em; */
+    align-items: center;
+    justify-content: left;
+    padding: 0px 31px 0px 5px;
+    border-bottom: 3px solid #799fc0;
+    border-left: 1px solid #799fc0;
+    overflow: hidden;
+  }
+  
+  /*---==>Button Icon-==>*/
+  .i-pic-upload {
+      position: absolute;
+      color: #6c72ab;
+      background: #ebebeb;
+      background-size: cover !important;
+      font-size: 14px;
+      border-top: 1px solid #799fc0;
+      border-left: 1px solid #799fc0;
+
+      border-right: 1px solid #799fc0;
+      border-bottom: 1px solid #799fc0;
+      outline: none;
+      padding: 8.4px 10px;
+      top: 1%;
+      right: 2%;
+    width: 15px;
+    height: 15px;
+    border-radius: 0px 3px 3px 0px;
+  }
+  .i-deselect{
+    color: red;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+  }
+  .i-deselect::before {
+    font-family: 'fontawesome';
+    content: 'X';
+    position: absolute;
+    top: 1px;
+    right: -14px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: start;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  /*---==>Browse Text-==>*/
+  .text-browse {
+    background: #ebebeb;
+    padding: 1px 5px;
+    border-radius: 2px;
+    font-size: 12px;
+    margin-right: 5px;
+    border-radius: 2px 2px 2px 5px;
+  }
+  
+  .btn-upload:active {
+    border-bottom-width: 2px;
+    outline: none;
+  }
+  .text-browse:hover {
+    background: #e0e0e0;
+    color: #78838d;
+  }
+  .btn-upload:active .text-browse {
+    background: #e0e0e0;
+    color: #78838d;
+    padding-left: 6px;
+  }
+  .btn-upload:active + .i-pic-upload {
+    padding: 8.5px 8px;
+  }
+  
+  .text-file-name {
+    max-width: 170px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0;
+    text-align: left;
+    font-size: 14px;
+  }
+  
+  
+  
+  .owner{
+    position: relative;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px;
+    margin-top: -80px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  small{
+    font-size: 20px;
+  }

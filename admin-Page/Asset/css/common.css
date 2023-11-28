@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+/*--------------------------------------------------------------------
+
+1 汎用設定
+
+--------------------------------------------------------------------*/
+
+
+
+
+ /* 検索機能付きセレクトボックス */
+ .searchBoxElement{
+	background-color: white;
+	border: 1px solid #aaa;
+	position: absolute;
+	max-height: 114px;
+	overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  line-height: 23px;
+  list-style: none;
+  z-index: 1;
+  -ms-overflow-style: none;
+	scrollbar-width: none;
+}
+.searchBoxElement span{
+  padding: 0 5px;
+}
+.searchBoxElement::-webkit-scrollbar {
+  display:none;
+}
+.searchBoxElement li{
+	background-color: white;
+	color: black;
+}
+.searchBoxElement li:hover{
+	background-color: #50a0ff;
+	color: white;
+}
+.searchBoxElement li.selected{
+	background-color: #50a0ff;
+	color: white;
+}
+.refineText{
+	padding: 8px 0 8px 0 !important;
+}

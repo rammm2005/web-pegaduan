@@ -1,0 +1,4 @@
+{
+    "phpunit.preTask": "",
+    "plugins": ["@prettier/plugin-php"]
+}
