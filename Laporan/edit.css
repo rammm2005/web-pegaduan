@@ -6,13 +6,16 @@ body {
     padding: 10px;
     margin-bottom: 10px;
     /* border: 2px solid #ccc; */
-    background: #e5f6ea;
-    box-shadow: 1px 4px 6px #ccc , 0px 0px 10px #9c9696;
-    transition: background 0.4s ease;
+    background: #ffff;
+    box-shadow: #00000029 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    transition: box-shadow 0.4s ease;
+    padding: 1.4rem;
+    border-radius: .5rem;
 }
 
+
 .formSection * {
-    transition: opacity 0.4s ease;
+    transition: opacity 1s ease;
 }
 
 label,
@@ -80,7 +83,8 @@ label {
 
 
 .formSection.readOnly {
-    background: #e5f6ea;
+    background: #ccd1cc;
+    opacity: .6;
 }
 
 input,
