@@ -33,21 +33,20 @@ $data = mysqli_fetch_array($tampil);
 if (isset($_POST['hapus'])) {
 	$id_tanggapan = $_POST['id_tanggapan'];
 
-	$ubah = mysqli_query($koneksi, 'DELETE FROM tanggapan WHERE id_tanggapan="' . $id_tanggapan . '"');
-	if ($ubah) {
+	$hapus = mysqli_query($koneksi, 'DELETE FROM tanggapan WHERE id_tanggapan="' . $id_tanggapan . '"');
+	if ($hapus) {
 		echo '
-				<script>
-				<script>
-				swal({
-				  title: "Success!",
-				  text: "Data tanggapan Berhasil Di Hapus!",
-				  icon: "success",
-				  button:"Okey",
-				  
-				});
-					window.location="dashboard.php?page=tanggapan"; 
-				</script>
-			';
+		<script>
+		swal({
+		  title: "Success!",
+		  text: "Data pengaduan Berhasil Di Hapus!",
+		  icon: "success",
+		  button:"Okey",
+		  
+		});
+		window.location="dashboard.php?page=tanggapan";
+		</script>
+		  ';
 	}
 }
 ?>
