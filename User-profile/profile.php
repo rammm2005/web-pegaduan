@@ -222,8 +222,8 @@ $data = mysqli_fetch_array($query);
                   <div class="row">
                     <div class="col-md-12">
                       <div class="form-group focused">
-                        <label class="form-control-label" for="input-pass">Telphone</label>
-                        <input id="input-pass" class="form-control form-control-alternative" placeholder="Phone Number" required name="telp"  value="<?= $data['telp'] ?>" type="password">
+                        <label class="form-control-label" for="telp">Telphone</label>
+                        <input id="telp" class="form-control form-control-alternative" placeholder="Phone Number" required name="telp"  value="<?= $data['telp'] ?>" type="telp">
                       </div>
                     </div>
                   </div>

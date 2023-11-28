@@ -1,0 +1,11 @@
+Options -Indexes
+RewriteEngine On
+
+# Redirect requests to dashboard.php if it's a directory request
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*)$ /pengaduan-masyarakat2/admin-Page/dashboard.php [L,QSA]
+
+# Redirect requests to dashboard.php for other cases
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /pengaduan-masyarakat2/admin-Page/dashboard.php [L,QSA]

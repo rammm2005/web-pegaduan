@@ -1,0 +1,11 @@
+Options -Indexes
+RewriteEngine On
+
+# Redirect requests to home.php if it's a directory request
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*)$ /pengaduan-masyarakat2/home.php [L,QSA]
+
+# Redirect requests to home.php for other cases
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /pengaduan-masyarakat2/home.php [L,QSA]
