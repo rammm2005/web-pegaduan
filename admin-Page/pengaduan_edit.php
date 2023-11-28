@@ -158,8 +158,8 @@ if(isset($_POST['update'])){
     if(isset($_FILES["foto"])){
     $foto = $_FILES['foto'];
     $foto_nama = $_FILES['foto']['name'];
-   $foto_size = $_FILES['foto']['size'];
-   $foto_tmp_name = $_FILES['foto']['tmp_name'];
+    $foto_size = $_FILES['foto']['size'];
+    $foto_tmp_name = $_FILES['foto']['tmp_name'];
 
         if(isset($foto)){
             if($foto_size > 4044070){

@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +29,7 @@
 <?php
 include 'User-asset/include/header-2.php';
 ?>
+
 <body>
 
   <div class="main-text" style="justify-content:center;">
@@ -81,106 +79,113 @@ include 'User-asset/include/header-2.php';
       </div>
     </div>
 
-  
 
 
 
-   <div class="swiper-container">
-        <div class="swiper-wrapper" data-aos="fade-up">
 
-      <?php
-    include 'User-asset/include/koneksi.php';
-      $show = mysqli_query($con , "SELECT * FROM viewtanggapan");
-      // $show = mysqli_query($con , "SELECT * FROM tanggapan JOIN pengaduan ON tanggapan.id_pengaduan = pengaduan.id_pengaduan");
+    <div class="swiper-container">
+      <div class="swiper-wrapper" data-aos="fade-up">
 
-      while($data = mysqli_fetch_array($show)){
-    ?>
+        <?php
+        include 'User-asset/include/koneksi.php';
+        $show = mysqli_query($con, "SELECT * FROM viewtanggapan");
+        // $show = mysqli_query($con , "SELECT * FROM tanggapan JOIN pengaduan ON tanggapan.id_pengaduan = pengaduan.id_pengaduan");
+        
+        while ($data = mysqli_fetch_array($show)) {
+          ?>
 
-     
+
 
           <?php
-if($data['status'] != 'tolak'){
-?>
+          if ($data['status'] != 'tolak') {
+            ?>
 
- <div class="swiper-slide">
-                <div class="info">
-            <?php
-        if($data['status'] == 'tolak'){
-          echo '
+            <div class="swiper-slide">
+              <div class="info">
+                <?php
+                if ($data['status'] == 'tolak') {
+                  echo '
           <div class="status">
           <button class="btn-tolak"> <i class="fa fa-times"></i> di tolak </button>
         </div>
           ';
-       
-        }else if($data['status'] == 'proses'){
-          echo '
+
+                } else if ($data['status'] == 'proses') {
+                  echo '
           <div class="status">
           <button class="btn-proses"> <i class="fa fa-times"></i> di Proses </button>
         </div>
           ';
-        }else if($data['status'] == '0'){
-          echo '
+                } else if ($data['status'] == '0') {
+                  echo '
           <div class="status">
           <button class="btn-belum"> <i class="fa fa-times"></i> belum Proses </button>
         </div>
           ';
-        }else{
-          echo '
+                } else {
+                  echo '
           <div class="status">
           <button class="btn-selesai"> <i class="fa fa-times"></i> Finish </button>
         </div>
           ';
-        }
-        ?>
-            <?php if($data['foto'] != ''){ ?>
-            <div class="img-area">
+                }
+                ?>
+                <?php if ($data['foto'] != '') { ?>
+                  <div class="img-area">
 
-              <img src="admin-Page/upload/<?= $data['foto']; ?>" width="400" width="300" height="250" alt="Foto Bukti pengaduan">
+                    <img src="admin-Page/upload/<?= $data['foto']; ?>" width="400" width="300" height="250"
+                      alt="Foto Bukti pengaduan">
+                  </div>
+                <?php } else { ?>
+                  <div class="img-area">
+
+                    <img src="admin-Page/Asset/img/no-img.png" width="200" alt="No Foto Uploaded">
+                  </div>
+                <?php } ?>
+                <!-- <img src="User-asset/Asset/img/FmquwL5aAAEIKug.jpg" alt="" class="img"> -->
+                <hr class="line">
+                <i class="masyarakat">
+                  <?php echo $data['username'] ?>
+                </i>
+                <br>
+                <p>
+                  <?php echo $data['isi_laporan'] ?>
+                </p>
+                <p style="color:red;">
+                  <?php
+
+                  $nice = $data['tgl_pengaduan'];
+                  $date_new = date("d F, Y , (m.h)", strtotime($nice));
+                  echo "" . $date_new . ".";
+
+                  ?>
+                </p>
+
+              </div>
+
+              <a href="tanggapan.php?&id=<?= $data['id_tanggapan'] ?>" class="btn-showing-tanggapan"
+                onclick="return confirm('Anda akan memasuki Secret site?');">Lihat Tanggapan</a>
+
+
             </div>
-            <?php } else{?>
-            <div class="img-area">
-
-              <img src="admin-Page/Asset/img/no-img.png" width="200" alt="No Foto Uploaded">
-            </div>
-            <?php }?>
-            <!-- <img src="User-asset/Asset/img/FmquwL5aAAEIKug.jpg" alt="" class="img"> -->
-            <hr class="line">
-            <i class="masyarakat"><?php echo $data['username'] ?></i>
-            <br>
-            <p><?php echo $data['isi_laporan'] ?></p>
-            <p style="color:red;">
-            <?php
-            
-            $nice = $data['tgl_pengaduan'];
-            $date_new = date("d F, Y , (m.h)", strtotime($nice));
-            echo "".$date_new.".";
-            
-            ?></p>
-
-            </div>
-            
-            <a href="tanggapan.php?&id=<?=$data['id_tanggapan']?>" class="btn-showing-tanggapan" onclick="return confirm('Anda akan memasuki Secret site?');">Lihat Tanggapan</a>
-
-
-            </div>
-
-          <?php 
-}
-    ?>
 
           <?php
-      }
-?>
+          }
+          ?>
+
+          <?php
+        }
+        ?>
+
+      </div>
+
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <div class="swiper-pagination"></div>
+
 
     </div>
-
-<div class="swiper-button-prev"></div>
-  <div class="swiper-button-next"></div>
-
-  <div class="swiper-pagination"></div>
-
-
-</div>
 
 
 
@@ -190,8 +195,8 @@ if($data['status'] != 'tolak'){
 
 
   <?php
-include 'User-asset/include/footer-2.php';
-?>
+  include 'User-asset/include/footer-2.php';
+  ?>
 
   <script src="User-asset/Asset/js/jquery-3.6.3.js"></script>
   <script src="User-asset/Asset/js/script.js"></script>
@@ -199,33 +204,33 @@ include 'User-asset/include/footer-2.php';
   <script src="User-asset/Asset/js/slider.js"></script>
   <script src="User-asset/Asset/js/swiper.min.js"></script>
   <script>
-        var swiper = new Swiper('.swiper-container', {
-            effect: 'parallax',
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            coverflowEffect: {
-            rotate: 60,
-            stretch: 0,
-            depth: 100,
-            modifier: 5,
-            slideShadows : true,
-            },
-            autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      type: "dynamic"
-            },
-            navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev"
-    }
-        });
-    </script>
- 
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'parallax',
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 60,
+        stretch: 0,
+        depth: 100,
+        modifier: 5,
+        slideShadows: true,
+      },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        type: "dynamic"
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev"
+      }
+    });
+  </script>
+
 
 
   <script>
