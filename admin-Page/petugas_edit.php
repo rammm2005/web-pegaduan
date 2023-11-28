@@ -86,10 +86,11 @@ $data = mysqli_fetch_array($tampil);
                                     <div class="form-group col-md-12">
                                         <label for="file-7">Foto <span style="color:red;">*</span></label>
                                         <div class="file-loading">
-                                            <input id="file-1" class="file" type="file" name="foto_petugas" multiple
+                                            <input id="file-1" class="file" type="file" value="Admin-img/<?php echo $data['foto_petugas']; ?>" name="foto_petugas" multiple
                                                 data-preview-file-type="any" data-upload-url="#" data-theme="fa5">
                                             <div id="errorBlock" class="help-block"></div>
                                         </div>
+                                        
                                     </div>
 
                                     <div class="card-footer">

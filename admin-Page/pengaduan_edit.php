@@ -153,46 +153,50 @@ if(isset($_POST['update'])){
     $isi_laporan = $_POST['isi_laporan'];
     $nik = $_POST['nik'];
     $status = $_POST['status'];
+
+
+    if(isset($_FILES["foto"])){
     $foto = $_FILES['foto'];
     $foto_nama = $_FILES['foto']['name'];
    $foto_size = $_FILES['foto']['size'];
    $foto_tmp_name = $_FILES['foto']['tmp_name'];
 
+        if(isset($foto)){
+            if($foto_size > 4044070){
+                echo '
+                <script>
+                swal({
+                title: "Warning!",
+                text: "Foto Melebihi format yang di tentukan (5MB)!",
+                icon: "warning",
+                button:"OK",
+                });
+                
+                </script>
+                ';
 
-    if(isset($foto)){
-        if($foto_size > 4044070){
+        }else{
+            move_uploaded_file( $foto_tmp_name,'upload/'.$foto_nama);
+            $update = mysqli_query($koneksi, 'UPDATE pengaduan SET tgl_pengaduan="'.$tgl_pengaduan.'", isi_laporan="'.$isi_laporan.'" , nik="'.$nik.'" ,status="'.$status.'"  ,foto="'.$foto_nama.'" WHERE id_pengaduan="'.$id_pengaduan.'"');
+            
             echo '
             <script>
             swal({
-              title: "Warning!",
-              text: "Foto Melebihi format yang di tentukan (5MB)!",
-              icon: "warning",
-              button:"OK",
-            });
+            title: "Success!",
+            text: "Data pengaduan Berhasil Di Update!",
+            icon: "success",
+            button:"Okey",
             
+            });
+            window.location="dashboard.php?page=pengaduan";
             </script>
-              ';
-
-    }else{
-        move_uploaded_file( $foto_tmp_name,'upload/'.$foto_nama);
-        $update = mysqli_query($koneksi, 'UPDATE pengaduan SET tgl_pengaduan="'.$tgl_pengaduan.'", isi_laporan="'.$isi_laporan.'" , nik="'.$nik.'" ,status="'.$status.'"  ,foto="'.$foto_nama.'" WHERE id_pengaduan="'.$id_pengaduan.'"');
-        
-        echo '
-        <script>
-        swal({
-          title: "Success!",
-          text: "Data pengaduan Berhasil Di Update!",
-          icon: "success",
-          button:"Okey",
-          
-        });
-        window.location="dashboard.php?page=pengaduan";
-        </script>
-          ';
+            ';
+        }
+    
     }
 }
-
 }
+
 
 
 
