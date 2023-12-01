@@ -328,18 +328,13 @@ $('#counter').each(function() {
     );
   </script> -->
 
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script> -->
   <script>
-    // Wait for the DOM to be ready
+
     $(function () {
-      // Initialize form validation on the registration form.
-      // It has the name attribute "registration"
+
       $("form[name='submit']").validate({
-        // Specify validation rules
         rules: {
-          // The key name on the left side is the name attribute
-          // of an input field. Validation rules are defined
-          // on the right side
+
           nik: "required",
           isi_laporan: {
             required: true,
@@ -348,12 +343,10 @@ $('#counter').each(function() {
           tgl_pengaduan: "required",
           foto: {
             required: true,
-            // Specify that email should be valitgld
-            // by the built-in "email" rule
+          
             accept: "jpg , png , svg , web , jpeg"
           }
         },
-        // Specify validation error messages
         messages: {
           nik: "NIK tidak boleh kosong harus disi",
           isi_laporan: {
@@ -366,8 +359,7 @@ $('#counter').each(function() {
             accept: "Only Support (JPG , PNG , SVG , WEB , JPEG)"
           }
         },
-        // Make sure the form is submitted to the destination defined
-        // in the "action" attribute of the form when valid
+       
         submitHandler: function (form) {
           form.submit();
         }
